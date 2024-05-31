@@ -31,3 +31,8 @@ This bam file is used as inputs for Pilon.
 `samtools index EdRed3.illsort.bam`
 
 `java -Xmx350G -jar ${HOME}/pilon-1.24.jar --genome EdRed3.polish.fasta --bam EdRed3.illsort.bam  --changes  --vcf --diploid --threads 16 --output EdRed3.polish`
+
+
+Pilon was run twice, using the output from the first run for the second run. 
+After running Pilon the genome is now complete.
+This completed genome can be found in the [Finished Genome folder](../../Finished_Genome) 

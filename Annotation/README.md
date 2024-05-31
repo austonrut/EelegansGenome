@@ -17,11 +17,7 @@ The output from RepeatMasker was then used as input into BRAKER2
 
 ### Step 2: BRAKER
 
-`module load braker/2.1.5
-module load diamond
-
-
-braker.pl --cores=29 --species=edwardsia_elegans --genome=Edwardsia.V3P2.final.fasta.masked --prot_seq=prot.metastella.fasta  --bam=../EdV3P2.alignsort.bam \
+`braker.pl --cores=29 --species=edwardsia_elegans --genome=Edwardsia.V3P2.final.fasta.masked --prot_seq=prot.metastella.fasta  --bam=../EdV3P2.alignsort.bam \
 --prot_seq=/scratch/arutle14/Edwardsia_genome/polishbkr/FinalBraker/RptMdlr/prot.metastella.fasta --etpmode \
 --softmasking --AUGUSTUS_CONFIG_PATH=/scratch/arutle14/Edwardsia_genome/polishbkr/config --DIAMOND_PATH=/apps/pkg/diamond/2.0.9/bin \
 --ALIGNMENT_TOOL_PATH=${PROTHINT}/bin`

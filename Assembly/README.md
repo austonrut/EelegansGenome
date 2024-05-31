@@ -1,7 +1,7 @@
 ## This file contains the step by step and codes used for de-novo assembly of the *Edwardsia elegans* genome from raw nanopore (FAST5) data
 
 ### Step 1: Sequenencing
-DNA was extracted from a sinlge *E. elegans* individual and sequeneced on a Nanopore minion (Kit:LSK109 Flowcell:R10.4) and Illumina NextSeq (xxx). 
+DNA was extracted from a sinlge *E. elegans* individual and sequeneced on a Nanopore minion (Kit:LSK109 Flowcell:R10.4) and Illumina NextSeq 2000 P3 (2x150bp). 
 
 ### Step 2: Basecalling
 FAST5 files (both pass & fail) generated from Nanopore sequencing are added to a single directory together (fast5all) and then basecalled using GUPPY.

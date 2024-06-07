@@ -21,6 +21,25 @@ Using Orthofind we can pull of all the shared single copy orthologs between all 
 
 
 ### Ultra Conserved Noncoding Elements
+Sequences for UCNE were BLAST against the genomes for *E. elegans*, *N. vectensis*, and *S. callimorphus*
+
+`inster blast code here`
+
+Then top hits for each UCNE was used to make files for MacroSyntR
+
+"Bed" files
+
+`cat ucne.Edtest.blast| awk '!a[$1]++' | cut -f1,2,9,10 | awk '{print $2"\t"$3"\t"$4"\t"$1}' > Ed.topucne.bed`
+`cat ucne.Nvtest.blast| awk '!a[$1]++' | cut -f1,2,9,10 | awk '{print $2"\t"$3"\t"$4"\t"$1}' > Nv.topucne.bed`
+`cat ucne.Sctest.blast| awk '!a[$1]++' | cut -f1,2,9,10 | awk '{print $2"\t"$3"\t"$4"\t"$1}' > Sc.topucne.bed`
+
+"Ortholog" table
+
+`awk '{print $0,$0}' nv.test.list | sed -E 's/(NV.*)( )(NV.*)/\1_ed\t\3_nv/' > EdNV.ucne.tbl`
+
+
+Only *E. elegans* contigs with more than 1 UCNE were taken for MacroSyntR analysis.
+
 
 
 ### MicroRNAs

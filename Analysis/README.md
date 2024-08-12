@@ -1,4 +1,4 @@
-## This files contains stwp by step how to analysis genomic data
+## This files contains instructions on how to analysis genomic data
 
 We analysied the genome and protein predictions for orthologous proteins, Macrosynteny, microsynteny, ultra conserved noncoding elements (UCNEs), and microRNAs (miRNAs)
 

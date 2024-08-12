@@ -85,7 +85,15 @@ Now that we have generated all the input file we do the rest of the analysis in 
 
                     
 ### Microsynteny
+Sequences of interest were obtained from NCBI and were then Blast against the proteins for each species.
+From there the top blast hits were taken and then sorted by genomic location. 
+An example of this code using HOX genes is below
 
+`blastp -query ./HOX/stellahox.faa  -db rename.augus.hints.aa  -outfmt 6 -out Ed.hox.blast`
+
+`cat Ed.hox.blast | awk '$11<1e-05' | sort -k1,1 -k11,11g | awk '!a[$1]++' | sort -k2,2 -k9,9 > EdHox.syntV1`
+
+`join -j1 <(sort EdHox.syntV1) <(sort NvecHox.syntV1) | awk '{print $1"\t"$2"\t"$9"\t"$10"\t"$13"\t"$20"\t"$21}'| sort -k5,5 -k6,6g > Hox.EdNvec.blast`
 
 ### Ultra Conserved Noncoding Elements
 Sequences for UCNE (obtained from [https://simrbase.stowers.org/nv_ucne]) were BLAST against the genomes for *E. elegans*, *N. vectensis*, and *S. callimorphus*
